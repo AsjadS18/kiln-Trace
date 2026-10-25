@@ -5,7 +5,7 @@
 AI finds every brick kiln from free satellite images, flags the ones that don't meet Punjab's zigzag
 requirement, and locks the evidence on-chain so inspection records can't be faked or erased.
 
-**Live dashboard:** _GitHub Pages URL_ · **Demo video:** _link_ ·
+**Live dashboard:** [asjads18.github.io/Klin-Trace](https://asjads18.github.io/Klin-Trace/) · **Demo video:** _link_ ·
 **Contract:** [`0x31Edb74a…9f741d24` on Polygon Amoy](https://amoy.polygonscan.com/address/0x31Edb74aaff280103B80fFe8e3deD9bc9f741d24)
 
 ## The problem
