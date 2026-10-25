@@ -206,7 +206,8 @@ function renderStats() {
     ["Possible conversions", n("CONVERTED")],
     ["New", n("NEW")],
   ];
-  if (RUN.model?.test_metrics) items.push(["Model mAP50", RUN.model.test_metrics.map50.toFixed(2)]);
+  const tm = RUN.model?.test_metrics;
+  if (tm) items.push(["Kiln detection mAP50", (tm.class_agnostic_map50 ?? tm.map50).toFixed(2)]);
   $("stats").innerHTML = items.map(([k, v]) => `<div class="stat"><b>${esc(v)}</b><small>${esc(k)}</small></div>`).join("");
   $("subtitle").textContent = `${RUN.aoi}, Punjab · Sentinel-2 ${RUN.sceneDate} · tamper-proof evidence on Polygon Amoy`;
   $("legend").innerHTML = Object.entries(STATES).map(([k, s]) =>
