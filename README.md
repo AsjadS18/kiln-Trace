@@ -13,12 +13,24 @@ Work in progress.
 |---|---|---|
 | Frozen record format + Merkle tree | `schemas/`, `pipeline/merkle.py` | done (Phase 1) |
 | Sample data for UI work | `fixtures/sample_run/` | done (Phase 1) |
+| Dataset conversion + label checks | `ml/prepare_dataset.py`, `ml/draw_labels.py` | done (Phase 2) |
 | Model training | `ml/` | planned |
 | Satellite pipeline | `pipeline/` | planned |
 | Smart contract | `contracts/` | planned (Person B) |
 | Backend API | `backend/` | planned (Person B) |
 | Dashboard + field app | `web/` | planned (Person B) |
 | Independent verifier | `verifier/` | planned |
+
+## Training data checks
+
+SentinelKilnDB converted to YOLO-OBB: 114,300 tiles (128 x 128 px, 10 m/px). Box counts match the
+dataset card exactly (train 63,787 / val 21,042 / test 12,819), with 0 malformed labels and 0
+class mismatches against the DOTA labels. Random training tiles per class, labels drawn on top
+(tiles upscaled 4x; yellow dot = first corner):
+
+| FCBK | Zigzag | CFCBK |
+|---|---|---|
+| ![FCBK labels](docs/images/label_check/train_FCBK.png) | ![Zigzag labels](docs/images/label_check/train_Zigzag.png) | ![CFCBK labels](docs/images/label_check/train_CFCBK.png) |
 
 ## Setup (Python)
 

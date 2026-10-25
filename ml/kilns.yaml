@@ -1,0 +1,11 @@
+# Ultralytics dataset template (YOLO-OBB).
+# Training uses data/yolo/kilns.yaml, written by ml/prepare_dataset.py with this machine's
+# absolute path (Ultralytics resolves relative paths against its own datasets folder).
+path: data/yolo
+train: images/train
+val: images/val
+test: images/test
+names:            # FROZEN class map - change only together with schemas and pipeline
+  0: CFCBK
+  1: FCBK
+  2: Zigzag
