@@ -1,0 +1,8 @@
+{
+  "name": "kilntrace-contracts",
+  "private": true,
+  "description": "Solidity dependencies for KilnTraceRegistry (compiled from Python via py-solc-x)",
+  "dependencies": {
+    "@openzeppelin/contracts": "5.1.0"
+  }
+}

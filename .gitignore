@@ -1,7 +1,9 @@
 # Data and model artifacts (large, re-downloadable)
-data/
+/data/
 runs/
-models/*.pt
+*.pt
+.ultralytics/
+.solcx/
 third_party/
 *.parquet
 

@@ -1,0 +1,66 @@
+{
+ "runId": "kasur-2026-02",
+ "aoi": "Kasur District",
+ "sceneDate": "2026-03-07",
+ "window": [
+  "2026-02-01",
+  "2026-03-15"
+ ],
+ "scenes": [
+  {
+   "id": "S2B_MSIL2A_20260223T054739_R048_T43RCQ_20260223T094255",
+   "date": "2026-02-23",
+   "mgrs": "43RCQ",
+   "cloud": 0.000136,
+   "baseline": "05.12"
+  },
+  {
+   "id": "S2C_MSIL2A_20260307T053701_R005_T43RDP_20260307T103208",
+   "date": "2026-03-07",
+   "mgrs": "43RDP",
+   "cloud": 0.0,
+   "baseline": "05.12"
+  },
+  {
+   "id": "S2B_MSIL2A_20260220T053749_R005_T43RDQ_20260220T092634",
+   "date": "2026-02-20",
+   "mgrs": "43RDQ",
+   "cloud": 0.000249,
+   "baseline": "05.12"
+  }
+ ],
+ "recordCount": 1107,
+ "byState": {
+  "NEW": 420,
+  "NON_ZIGZAG": 460,
+  "CONVERTED": 57,
+  "NOT_SEEN": 133,
+  "ZIGZAG": 37
+ },
+ "byClass": {
+  "CFCBK": 3,
+  "FCBK": 847,
+  "Zigzag": 124
+ },
+ "merkleRoot": "0x50cf337c1e06b989a8f0ec4828048a6b6a49d5c57d1bf906cfd977ba648e4adf",
+ "manifestCID": null,
+ "manifestSha256": "20e352355f1862551d54a45b47a80cb67e77c9f8bfe4cf754efbd4769e2dd9f0",
+ "modelSha256": "a9dc42329bd4235a10f56d1704d7efd310fa1531dbdc92b33d33e6990049adb4",
+ "codeCommit": "13464095ef12101c8c487ea952b4bbad23353128",
+ "knownKilnsMatched150m": 0.8341,
+ "knownKilnsInAoi": 687,
+ "model": null,
+ "chain": {
+  "runId": "kasur-2026-02",
+  "chainId": 80002,
+  "contract": "0x31Edb74aaff280103B80fFe8e3deD9bc9f741d24",
+  "batchId": 0,
+  "merkleRoot": "0x50cf337c1e06b989a8f0ec4828048a6b6a49d5c57d1bf906cfd977ba648e4adf",
+  "manifestRef": "sha256:20e352355f1862551d54a45b47a80cb67e77c9f8bfe4cf754efbd4769e2dd9f0",
+  "txHash": "0xb59426454d51b5ad564fdaa8eb928f0978cce72d62027c70ddc2563178ef28b9",
+  "block": 51118320,
+  "explorer": "https://amoy.polygonscan.com/tx/0xb59426454d51b5ad564fdaa8eb928f0978cce72d62027c70ddc2563178ef28b9"
+ },
+ "rpc": "https://polygon-amoy.drpc.org",
+ "ipfsGateway": "https://gateway.pinata.cloud/ipfs/"
+}

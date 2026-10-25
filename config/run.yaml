@@ -1,5 +1,5 @@
 # One pipeline run = one AOI + one date window.
-run_id: kasur-2025-12
+run_id: kasur-2026-02
 aoi:
   name: Kasur District
   geojson: config/aoi_kasur.geojson
@@ -7,10 +7,13 @@ aoi:
 imagery:
   stac_url: https://planetarycomputer.microsoft.com/api/stac/v1
   collection: sentinel-2-l2a
-  window: ["2025-12-01", "2025-12-31"]   # Nov-Feb matches training season
-  max_cloud_pct: 20
-  crs: EPSG:32643                         # UTM 43N (Lahore region)
-  resolution_m: 10
+  window: ["2026-02-01", "2026-03-15"]   # clear late-winter scenes; December smog washes out kiln colour (see run_2025_12.yaml)
+  max_cloud_pct: 5
+  # Training tiles came from GEE downloads in EPSG:4326 at scale 10 -> square pixels of
+  # 10/111319.49 degrees (10 m N-S, ~8.6 m E-W at Kasur). Use the same grid for inference.
+  crs: EPSG:4326
+  resolution: 0.0000898315284             # degrees per pixel
+  metric_crs: EPSG:32643                  # UTM 43N for areas, distances, NMS
   bands: [B04, B03, B02]                  # RGB order - must match training
   scl_mask_classes: [3, 8, 9, 10]         # shadow, cloud med/high, cirrus
   boa_offset: 1000                        # L2A baseline >= 04.00 adds +1000; subtract it
@@ -27,7 +30,7 @@ model:
 
 merge:
   nms_iou: 0.3
-  min_area_m2: 2000
+  min_area_m2: 1000                       # FCBK ~10x4 px = ~4000 m2; keep margin for small kilns
   max_area_m2: 40000
 
 track:
