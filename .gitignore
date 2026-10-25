@@ -1,0 +1,39 @@
+# Data and model artifacts (large, re-downloadable)
+data/
+runs/
+models/*.pt
+third_party/
+*.parquet
+
+# Secrets
+.env
+
+# Internal / private team files (repo is public)
+CLAUDE.md
+.claude/
+SETUP_GUIDE.md
+KilnTrace Architecture and Build Guide.pdf
+*Work Split*
+notes/
+*.local.md
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Node / web
+node_modules/
+.next/
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

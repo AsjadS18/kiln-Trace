@@ -1,0 +1,23 @@
+{
+  "fixture": true,
+  "chipsDir": "chips",
+  "chipName": "<h3>.png",
+  "runs": [
+    {
+      "runId": "kasur-fixture-2025-01",
+      "sceneDate": "2025-01-15",
+      "recordCount": 20,
+      "merkleRoot": "0x2e98f1e3ea2de8dd86310dcef4f77edb9f926ec1b19cec2bb2f0664911eebc41",
+      "manifest": "kasur-fixture-2025-01/manifest.json",
+      "proofs": "kasur-fixture-2025-01/proofs.json"
+    },
+    {
+      "runId": "kasur-fixture-2025-12",
+      "sceneDate": "2025-12-15",
+      "recordCount": 21,
+      "merkleRoot": "0x6825399856e6f87ff2753393b059902de2074e0ed0c0b90b559ccbe6d117997b",
+      "manifest": "kasur-fixture-2025-12/manifest.json",
+      "proofs": "kasur-fixture-2025-12/proofs.json"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+# One pipeline run = one AOI + one date window.
+run_id: kasur-2025-12
+aoi:
+  name: Kasur District
+  geojson: config/aoi_kasur.geojson
+
+imagery:
+  stac_url: https://planetarycomputer.microsoft.com/api/stac/v1
+  collection: sentinel-2-l2a
+  window: ["2025-12-01", "2025-12-31"]   # Nov-Feb matches training season
+  max_cloud_pct: 20
+  crs: EPSG:32643                         # UTM 43N (Lahore region)
+  resolution_m: 10
+  bands: [B04, B03, B02]                  # RGB order - must match training
+  scl_mask_classes: [3, 8, 9, 10]         # shadow, cloud med/high, cirrus
+  boa_offset: 1000                        # L2A baseline >= 04.00 adds +1000; subtract it
+
+tiles:
+  size_px: 128
+  stride_px: 98                           # 30 px overlap
+  scaling: per_tile_minmax                # see CLAUDE.md "Domain matching"
+
+model:
+  path: models/kiln_v1.pt
+  imgsz: 256
+  conf: 0.35                              # replace with value picked from PR curve
+
+merge:
+  nms_iou: 0.3
+  min_area_m2: 2000
+  max_area_m2: 40000
+
+track:
+  match_meters: 60
+  match_iou: 0.2
+  type_history: 3
+  h3_resolution: 10
+
+risk:                                     # priority score, not proof
+  w_non_zigzag: 50
+  w_thermal: 30
+  w_ban_window: 20
+  thermal_dt_center_k: 2.0
+  thermal_dt_scale_k: 1.5

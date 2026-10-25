@@ -1,0 +1,11 @@
+# Smog-ban windows when kilns must stop operating.
+# Fill from official Punjab EPD notifications (epd.punjab.gov.pk). Do not guess dates.
+# Each entry: start/end inclusive (YYYY-MM-DD), districts covered, and the source link.
+bans: []
+# Example shape (NOT real data):
+# bans:
+#   - id: punjab-2025-smog-1
+#     start: "YYYY-MM-DD"
+#     end: "YYYY-MM-DD"
+#     districts: [Kasur, Lahore, Sheikhupura]
+#     source: https://epd.punjab.gov.pk/...

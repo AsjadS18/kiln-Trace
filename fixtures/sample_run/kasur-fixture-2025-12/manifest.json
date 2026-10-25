@@ -1,0 +1,885 @@
+{
+  "schema": "kilntrace.manifest.v1",
+  "runId": "kasur-fixture-2025-12",
+  "createdAt": "2026-01-01T09:00:00Z",
+  "fixture": true,
+  "aoi": {
+    "name": "Kasur District",
+    "geojsonSha256": "b22e1cc72aa4cd55c9a96c17336452ecb494cafe8911666ccb6f4636a8204a2a"
+  },
+  "imagery": {
+    "collection": "sentinel-2-l2a",
+    "window": [
+      "2025-12-01",
+      "2025-12-31"
+    ],
+    "stacItems": [
+      "FIXTURE-chips-from-SentinelKilnDB"
+    ],
+    "composite": "FIXTURE (real dataset tiles, not a real composite)",
+    "scaling": "per_tile_minmax",
+    "mosaicSha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "model": {
+    "name": "FIXTURE model",
+    "sha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f",
+    "imgsz": 256,
+    "conf": 0.35
+  },
+  "code": {
+    "repo": "local",
+    "commit": "0000000"
+  },
+  "thresholds": {
+    "nmsIou": 0.3,
+    "matchMeters": 60
+  },
+  "merkle": {
+    "root": "0x6825399856e6f87ff2753393b059902de2074e0ed0c0b90b559ccbe6d117997b",
+    "leaf": "keccak256(keccak256(abi.encode(bytes32 kilnId, bytes32 recordHash)))",
+    "pairs": "sorted",
+    "recordHash": "keccak256(canonical JSON, sorted keys, no spaces)"
+  },
+  "records": [
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x8de5d840f87a2a6a529cb9b89b83c259c142b92ea3e0d3ac8d98a8ace10b4eb4",
+      "h3": "8a4248b1e2dffff",
+      "centroid_e6": [
+        74126839,
+        30744007
+      ],
+      "polygon_e6": [
+        [
+          74127422,
+          30743833
+        ],
+        [
+          74127422,
+          30744181
+        ],
+        [
+          74126257,
+          30744181
+        ],
+        [
+          74126257,
+          30743833
+        ]
+      ],
+      "areaM2": 4309,
+      "class": "Zigzag",
+      "confidenceBp": 9797,
+      "state": "CONVERTED",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "909c41669004f11ffa8b6993d5cadcd3c41422474142769a5051b18523dc7c4d",
+      "chipCID": "FIXTURE-909c41669004f11ffa8b6993",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xe0b2ff950c5f88571ec6d4497ef7d51b37d0998aaf46e8e9226384dafefba362",
+      "h3": "8a424d4d2897fff",
+      "centroid_e6": [
+        74072743,
+        30885117
+      ],
+      "polygon_e6": [
+        [
+          74073016,
+          30884633
+        ],
+        [
+          74073041,
+          30885593
+        ],
+        [
+          74072470,
+          30885601
+        ],
+        [
+          74072445,
+          30884642
+        ]
+      ],
+      "areaM2": 5827,
+      "class": "Zigzag",
+      "confidenceBp": 9058,
+      "state": "CONVERTED",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "6a1cabad7ca2cfdedaca7d5f61ed8550166f8338d8d2f19fb1b3667bfdc961d1",
+      "chipCID": "FIXTURE-6a1cabad7ca2cfdedaca7d5f",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x666ae335dfa0f3b299975462aa84ce9500f6d198f116590d428ccd6e337c3ce2",
+      "h3": "8a424d583417fff",
+      "centroid_e6": [
+        73800550,
+        30957990
+      ],
+      "polygon_e6": [
+        [
+          73800786,
+          30957503
+        ],
+        [
+          73800885,
+          30958444
+        ],
+        [
+          73800313,
+          30958477
+        ],
+        [
+          73800215,
+          30957536
+        ]
+      ],
+      "areaM2": 5743,
+      "class": "Zigzag",
+      "confidenceBp": 6850,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "1f6b2be1c08a4128a23ee03aed076689870c72e8cba0a6f1a660da853ca5e3c2",
+      "chipCID": "FIXTURE-1f6b2be1c08a4128a23ee03a",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x91bc2b752414ce4830c727200eb65d25d2edbd6f9928535584cdac2127f7f0ac",
+      "h3": "8a424d4102d7fff",
+      "centroid_e6": [
+        73938993,
+        30992150
+      ],
+      "polygon_e6": [
+        [
+          73939372,
+          30991666
+        ],
+        [
+          73939742,
+          30992054
+        ],
+        [
+          73938613,
+          30992635
+        ],
+        [
+          73938244,
+          30992247
+        ]
+      ],
+      "areaM2": 6928,
+      "class": "Zigzag",
+      "confidenceBp": 7850,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "0c5305faec9aff88cd54098d03e1de92bf09af49184fb37f7d4c483cb6eaee4a",
+      "chipCID": "FIXTURE-0c5305faec9aff88cd54098d",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x37191d672e32371f555cb7197f3f4aa0fe0f72fda968503f771453c4915d83bc",
+      "h3": "8a424d4e4d0ffff",
+      "centroid_e6": [
+        74034728,
+        31020675
+      ],
+      "polygon_e6": [
+        [
+          74034469,
+          31020139
+        ],
+        [
+          74035062,
+          31020162
+        ],
+        [
+          74034986,
+          31021211
+        ],
+        [
+          74034395,
+          31021189
+        ]
+      ],
+      "areaM2": 6618,
+      "class": "FCBK",
+      "confidenceBp": 0,
+      "state": "NOT_SEEN",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "11fd06424651d9e73779f4458db21ef5c777c2f014e56c9263a6fc02a25fa731",
+      "chipCID": "FIXTURE-11fd06424651d9e73779f445",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x8b4bfa8bfcd2b306b82fae5c79e7e8a713f0b64d3c91ecf74b3ef3de3cdce811",
+      "h3": "8a424d7ab297fff",
+      "centroid_e6": [
+        74344103,
+        31065864
+      ],
+      "polygon_e6": [
+        [
+          74344390,
+          31065341
+        ],
+        [
+          74344440,
+          31066372
+        ],
+        [
+          74343816,
+          31066387
+        ],
+        [
+          74343767,
+          31065357
+        ]
+      ],
+      "areaM2": 6828,
+      "class": "Zigzag",
+      "confidenceBp": 7000,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "f96f0b8302f4c827be9af98930b0eb8c8d891a8f2812b72234341451d47cd211",
+      "chipCID": "FIXTURE-f96f0b8302f4c827be9af989",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x41e8629d6b98ceb58b185eded10fcd942a078cabd635bc8e4ee0ea5ae0edf367",
+      "h3": "8a424d600007fff",
+      "centroid_e6": [
+        74455933,
+        31095863
+      ],
+      "polygon_e6": [
+        [
+          74456162,
+          31095346
+        ],
+        [
+          74456302,
+          31096334
+        ],
+        [
+          74455705,
+          31096380
+        ],
+        [
+          74455565,
+          31095392
+        ]
+      ],
+      "areaM2": 6326,
+      "class": "FCBK",
+      "confidenceBp": 7874,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 98,
+      "thermalDtCk": 590,
+      "inBanWindow": true,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "60b8318c0ee3c7be9f090858b1511c94ac6d31747f5a2de59d9f7582bb3f6c57",
+      "chipCID": "FIXTURE-60b8318c0ee3c7be9f090858",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x51f0583491bedef5961bd95271c612f44425f21748bd75db994a1e288cfc8576",
+      "h3": "8a424d601caffff",
+      "centroid_e6": [
+        74470341,
+        31102865
+      ],
+      "polygon_e6": [
+        [
+          74469633,
+          31102601
+        ],
+        [
+          74471086,
+          31102664
+        ],
+        [
+          74471048,
+          31103130
+        ],
+        [
+          74469595,
+          31103066
+        ]
+      ],
+      "areaM2": 7201,
+      "class": "Zigzag",
+      "confidenceBp": 8553,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "3bc1800c3789e621c52210e5d18af1806219cf0f693da7679cfa62d88e1bb45c",
+      "chipCID": "FIXTURE-3bc1800c3789e621c52210e5",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x1ee5b9a4ef67729617b5a7902cca36b8b5b31a40aea4fd3f9f2300f8e248e624",
+      "h3": "8a424d710d57fff",
+      "centroid_e6": [
+        74259491,
+        31130884
+      ],
+      "polygon_e6": [
+        [
+          74260088,
+          31130642
+        ],
+        [
+          74260102,
+          31131108
+        ],
+        [
+          74258894,
+          31131126
+        ],
+        [
+          74258881,
+          31130661
+        ]
+      ],
+      "areaM2": 5956,
+      "class": "FCBK",
+      "confidenceBp": 8385,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 99,
+      "thermalDtCk": 670,
+      "inBanWindow": true,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "5d0d2582ac28e783df79dd67fce3290499eb37e99177c5f6389c1b89ab1c1407",
+      "chipCID": "FIXTURE-5d0d2582ac28e783df79dd67",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x768532c9d4d225952fd24fde4273b1f0e3679e4260d2de9aa2b58600cdbe0cfb",
+      "h3": "8a424d52b4f7fff",
+      "centroid_e6": [
+        73847816,
+        31168852
+      ],
+      "polygon_e6": [
+        [
+          73848148,
+          31168379
+        ],
+        [
+          73848525,
+          31168739
+        ],
+        [
+          73847484,
+          31169325
+        ],
+        [
+          73847107,
+          31168966
+        ]
+      ],
+      "areaM2": 6310,
+      "class": "FCBK",
+      "confidenceBp": 9414,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 99,
+      "thermalDtCk": 710,
+      "inBanWindow": true,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "cdce1877252b9f60db7d2e953a5ce45f3a664d79ced21d1cf7e6882f0086a880",
+      "chipCID": "FIXTURE-cdce1877252b9f60db7d2e95",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xd67e426f6d0d06c95d7879a8616ac105c6532d5794a418f5afa517c76217bd58",
+      "h3": "8a424d75e657fff",
+      "centroid_e6": [
+        74498748,
+        31188919
+      ],
+      "polygon_e6": [
+        [
+          74499453,
+          31188641
+        ],
+        [
+          74499511,
+          31189097
+        ],
+        [
+          74498043,
+          31189197
+        ],
+        [
+          74497985,
+          31188741
+        ]
+      ],
+      "areaM2": 7167,
+      "class": "FCBK",
+      "confidenceBp": 8604,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "555f2127876d1f348cb2ca363b377aa846490297f86b4b7a3fc2c1599033003c",
+      "chipCID": "FIXTURE-555f2127876d1f348cb2ca36",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xc192ca3a7db1ae24a228d3eec85e2919974cad76bb3a29046c1165168ad6b8cc",
+      "h3": "8a424d704887fff",
+      "centroid_e6": [
+        74270529,
+        31201667
+      ],
+      "polygon_e6": [
+        [
+          74270180,
+          31201166
+        ],
+        [
+          74271255,
+          31201851
+        ],
+        [
+          74270877,
+          31202168
+        ],
+        [
+          74269803,
+          31201482
+        ]
+      ],
+      "areaM2": 6346,
+      "class": "Zigzag",
+      "confidenceBp": 8151,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "4177e516b8278ba9081e0fbc90b90d1e41c9e13f2b6fac8c57155f53ac5f049a",
+      "chipCID": "FIXTURE-4177e516b8278ba9081e0fbc",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x6df2dc21dfbec12e9ebe3f6f445d84a2a1aa8589b4f54484bdcb9a43817ce0a1",
+      "h3": "8a424d090947fff",
+      "centroid_e6": [
+        74108472,
+        31229486
+      ],
+      "polygon_e6": [
+        [
+          74109054,
+          31229166
+        ],
+        [
+          74109185,
+          31229596
+        ],
+        [
+          74107890,
+          31229806
+        ],
+        [
+          74107759,
+          31229375
+        ]
+      ],
+      "areaM2": 6200,
+      "class": "Zigzag",
+      "confidenceBp": 8446,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "0ce01c2fd1bd2a02a9cfc45cadba8c6e92ac75745d39b5ba1c7a1635e972f252",
+      "chipCID": "FIXTURE-0ce01c2fd1bd2a02a9cfc45c",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xa92e0b3b93d50fd34e7942c557143eece9beff595f8469c5dac104524bb63df6",
+      "h3": "8a4248b18cd7fff",
+      "centroid_e6": [
+        74130108,
+        30751818
+      ],
+      "polygon_e6": [
+        [
+          74129848,
+          30751393
+        ],
+        [
+          74130368,
+          30751393
+        ],
+        [
+          74130368,
+          30752243
+        ],
+        [
+          74129848,
+          30752243
+        ]
+      ],
+      "areaM2": 4705,
+      "class": "FCBK",
+      "confidenceBp": 8672,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "38f71dd5bbb86a31b9ecd37636806ada1a21e3462345c7409c6837d0ec5e25f2",
+      "chipCID": "FIXTURE-38f71dd5bbb86a31b9ecd376",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xfeabc9caf49acbafb93985fb89bb4f30066d62fb540bc981420c377fbcf93d4c",
+      "h3": "8a4248b61177fff",
+      "centroid_e6": [
+        74248088,
+        30931951
+      ],
+      "polygon_e6": [
+        [
+          74248263,
+          30931525
+        ],
+        [
+          74248407,
+          30932329
+        ],
+        [
+          74247912,
+          30932378
+        ],
+        [
+          74247769,
+          30931573
+        ]
+      ],
+      "areaM2": 4301,
+      "class": "FCBK",
+      "confidenceBp": 6615,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "2877bbd91729658bbb1ec9635b390d218a12d9aed9027171453f0b59b40ad8a1",
+      "chipCID": "FIXTURE-2877bbd91729658bbb1ec963",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xc2d99693a16b803972c9725e4ec9a37cea65b0a0da3ed5d3130df217a0d9fb9f",
+      "h3": "8a424d58c2e7fff",
+      "centroid_e6": [
+        73844570,
+        30999704
+      ],
+      "polygon_e6": [
+        [
+          73844868,
+          30999198
+        ],
+        [
+          73844918,
+          31000192
+        ],
+        [
+          73844272,
+          31000210
+        ],
+        [
+          73844222,
+          30999215
+        ]
+      ],
+      "areaM2": 6834,
+      "class": "FCBK",
+      "confidenceBp": 8400,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "b59d2f02c7d498bf118d9c8c300e57866a08bae519366176e6c640e5b8cabea8",
+      "chipCID": "FIXTURE-b59d2f02c7d498bf118d9c8c",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x77cb3b674f9957e58c3527e6cf21f310f6c9a3ef95276a1bdeaedb1945d72e0a",
+      "h3": "8a424d5a9a5ffff",
+      "centroid_e6": [
+        73844943,
+        31052374
+      ],
+      "polygon_e6": [
+        [
+          73844318,
+          31051992
+        ],
+        [
+          73845751,
+          31052305
+        ],
+        [
+          73845568,
+          31052756
+        ],
+        [
+          73844135,
+          31052442
+        ]
+      ],
+      "areaM2": 7461,
+      "class": "FCBK",
+      "confidenceBp": 8956,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "cca7c45a25e7d69e0d1e543ae66762edbf82deff0cdd812b93eafce70b1ed9eb",
+      "chipCID": "FIXTURE-cca7c45a25e7d69e0d1e543a",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x3dc5c0e1c542006c0f5d4616647248eac73b28866d7b8e0f5315707f1e39f251",
+      "h3": "8a424d631367fff",
+      "centroid_e6": [
+        74418954,
+        31103978
+      ],
+      "polygon_e6": [
+        [
+          74418343,
+          31103668
+        ],
+        [
+          74419663,
+          31103813
+        ],
+        [
+          74419565,
+          31104288
+        ],
+        [
+          74418245,
+          31104142
+        ]
+      ],
+      "areaM2": 6795,
+      "class": "FCBK",
+      "confidenceBp": 9782,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "ebc417a7c9ce08ab7e317afaf261e3daf29e2ba38115b213c394fefb56883134",
+      "chipCID": "FIXTURE-ebc417a7c9ce08ab7e317afa",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x81d8fadd22888b081e4d1ac976363e239a6caeec66346decce0bd1579a95de40",
+      "h3": "8a424d711b2ffff",
+      "centroid_e6": [
+        74296907,
+        31150956
+      ],
+      "polygon_e6": [
+        [
+          74297168,
+          31150445
+        ],
+        [
+          74297219,
+          31151450
+        ],
+        [
+          74296646,
+          31151466
+        ],
+        [
+          74296596,
+          31150461
+        ]
+      ],
+      "areaM2": 6108,
+      "class": "Zigzag",
+      "confidenceBp": 7698,
+      "state": "ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 0,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "e901e55a9f4b8f5dddb6a3f3453b75fd8f94b428868b16b885e3b23584b67449",
+      "chipCID": "FIXTURE-e901e55a9f4b8f5dddb6a3f3",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0xec7fde3df77f964dd304dca5e75a8c438325028eed805b1699df27be1aa31ef0",
+      "h3": "8a424d70392ffff",
+      "centroid_e6": [
+        74312821,
+        31182052
+      ],
+      "polygon_e6": [
+        [
+          74313484,
+          31181798
+        ],
+        [
+          74313527,
+          31182233
+        ],
+        [
+          74312158,
+          31182306
+        ],
+        [
+          74312115,
+          31181872
+        ]
+      ],
+      "areaM2": 6339,
+      "class": "FCBK",
+      "confidenceBp": 8578,
+      "state": "NON_ZIGZAG",
+      "prevState": "NEW",
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "4fb393b799e7862b566e93420684ff33b36d7d65834fad7619b9fe29de23da2c",
+      "chipCID": "FIXTURE-4fb393b799e7862b566e9342",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    },
+    {
+      "schema": "kilntrace.record.v1",
+      "runId": "kasur-fixture-2025-12",
+      "kilnId": "0x735f7354c3c2c6c74189332a09f75c0f8b8ef2f0ab7fcf05845fdf08d971aa88",
+      "h3": "8a424d5400affff",
+      "centroid_e6": [
+        73970703,
+        31203360
+      ],
+      "polygon_e6": [
+        [
+          73970551,
+          31202861
+        ],
+        [
+          73971325,
+          31203593
+        ],
+        [
+          73970855,
+          31203859
+        ],
+        [
+          73970080,
+          31203128
+        ]
+      ],
+      "areaM2": 5837,
+      "class": "FCBK",
+      "confidenceBp": 8721,
+      "state": "NEW",
+      "prevState": null,
+      "riskScore": 50,
+      "thermalDtCk": null,
+      "inBanWindow": false,
+      "sceneDate": "2025-12-15",
+      "chipSha256": "75cee13290278aef49c15ca1d731e6ef2f3deb1baa034ca6983fd918a2288c1f",
+      "chipCID": "FIXTURE-75cee13290278aef49c15ca1",
+      "modelSha256": "bdda52bf2a21f0bbf7ace54a234da920b5520c075e5d2703ad067a1277aaec3f"
+    }
+  ]
+}
