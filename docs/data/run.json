@@ -29,37 +29,58 @@
    "baseline": "05.12"
   }
  ],
- "recordCount": 1107,
+ "recordCount": 889,
  "byState": {
-  "NEW": 420,
-  "NON_ZIGZAG": 460,
-  "CONVERTED": 57,
-  "NOT_SEEN": 133,
-  "ZIGZAG": 37
+  "NON_ZIGZAG": 387,
+  "NEW": 202,
+  "NOT_SEEN": 159,
+  "CONVERTED": 86,
+  "ZIGZAG": 55
  },
  "byClass": {
-  "CFCBK": 3,
-  "FCBK": 847,
-  "Zigzag": 124
+  "CFCBK": 2,
+  "FCBK": 559,
+  "Zigzag": 169
  },
- "merkleRoot": "0x50cf337c1e06b989a8f0ec4828048a6b6a49d5c57d1bf906cfd977ba648e4adf",
+ "merkleRoot": "0xd1e2a6a27b0d6706b668b4b5ac17032589b350a68a82c302355a85bddfaeed6f",
  "manifestCID": null,
- "manifestSha256": "20e352355f1862551d54a45b47a80cb67e77c9f8bfe4cf754efbd4769e2dd9f0",
- "modelSha256": "a9dc42329bd4235a10f56d1704d7efd310fa1531dbdc92b33d33e6990049adb4",
- "codeCommit": "13464095ef12101c8c487ea952b4bbad23353128",
- "knownKilnsMatched150m": 0.8341,
+ "manifestSha256": "2dd28ad16b387d55513f72a13615debedfdc1048edf7e62ba1e84e61564c5347",
+ "modelSha256": "f5f038e13ead745321f9a6a43592a1da41efbc8dbbb10c354c72a0c921d4079b",
+ "codeCommit": "d69e85385492bd302bd900c2be2a013c16d85f94",
+ "knownKilnsMatched150m": 0.8006,
  "knownKilnsInAoi": 687,
- "model": null,
+ "model": {
+  "name": "kiln_v1",
+  "sha256": "f5f038e13ead745321f9a6a43592a1da41efbc8dbbb10c354c72a0c921d4079b",
+  "source": "runs/kiln_s_256/weights/best.pt",
+  "frozen_at": "2026-10-25T16:45:22Z",
+  "imgsz": 256,
+  "conf": 0.25,
+  "conf_rule": "chosen manually: precision/recall trade-off for real imagery (eval suggested 0.1)",
+  "classes": {
+   "0": "CFCBK",
+   "1": "FCBK",
+   "2": "Zigzag"
+  },
+  "test_metrics": {
+   "map50": 0.7999,
+   "map50_95": 0.5236,
+   "class_agnostic_map50": 0.9170714731283166,
+   "precision_at_conf": 0.7945,
+   "recall_at_conf": 0.8799,
+   "type_accuracy_on_detected": 0.8399
+  }
+ },
  "chain": {
   "runId": "kasur-2026-02",
   "chainId": 80002,
   "contract": "0x31Edb74aaff280103B80fFe8e3deD9bc9f741d24",
-  "batchId": 0,
-  "merkleRoot": "0x50cf337c1e06b989a8f0ec4828048a6b6a49d5c57d1bf906cfd977ba648e4adf",
-  "manifestRef": "sha256:20e352355f1862551d54a45b47a80cb67e77c9f8bfe4cf754efbd4769e2dd9f0",
-  "txHash": "0xb59426454d51b5ad564fdaa8eb928f0978cce72d62027c70ddc2563178ef28b9",
-  "block": 51118320,
-  "explorer": "https://amoy.polygonscan.com/tx/0xb59426454d51b5ad564fdaa8eb928f0978cce72d62027c70ddc2563178ef28b9"
+  "batchId": 1,
+  "merkleRoot": "0xd1e2a6a27b0d6706b668b4b5ac17032589b350a68a82c302355a85bddfaeed6f",
+  "manifestRef": "sha256:2dd28ad16b387d55513f72a13615debedfdc1048edf7e62ba1e84e61564c5347",
+  "txHash": "0x674ae2767db80dc20391bd4961dae565edcdbdbc8a8f5effc079d0a7d5a39054",
+  "block": 51124233,
+  "explorer": "https://amoy.polygonscan.com/tx/0x674ae2767db80dc20391bd4961dae565edcdbdbc8a8f5effc079d0a7d5a39054"
  },
  "rpc": "https://polygon-amoy.drpc.org",
  "ipfsGateway": "https://gateway.pinata.cloud/ipfs/"

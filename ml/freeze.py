@@ -30,6 +30,8 @@ def main() -> None:
     ap.add_argument("--weights", required=True)
     ap.add_argument("--version", default="v1")
     ap.add_argument("--results", default="ml/results.json")
+    ap.add_argument("--conf", type=float, default=None,
+                    help="operating threshold to record (must be a row of the eval sweep); default: eval's choice")
     args = ap.parse_args()
 
     src = (ROOT / args.weights).resolve()
@@ -47,6 +49,11 @@ def main() -> None:
     shutil.copy2(src, dst)
     assert sha256_file(dst) == sha
     thr = results["threshold"]
+    if args.conf is not None:
+        row = next((r for r in results["sweep"] if abs(r["conf"] - args.conf) < 1e-9), None)
+        if row is None:
+            raise SystemExit(f"conf {args.conf} not in the eval sweep: {[r['conf'] for r in results['sweep']]}")
+        thr = {**row, "rule": f"chosen manually: precision/recall trade-off for real imagery (eval suggested {thr['conf']})"}
     meta = {
         "name": f"kiln_{args.version}",
         "sha256": sha,
@@ -54,6 +61,7 @@ def main() -> None:
         "frozen_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "imgsz": results["imgsz"],
         "conf": thr["conf"],
+        "conf_rule": thr["rule"],
         "classes": {"0": "CFCBK", "1": "FCBK", "2": "Zigzag"},
         "test_metrics": {
             "map50": round(results["ultralytics"]["all"]["map50"], 4),

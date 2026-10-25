@@ -39,25 +39,42 @@ Sentinel-2 (free, 10 m)  ->  YOLO-OBB detector  ->  change tracking  ->  evidenc
 
 ## Results
 
-_Draft numbers from an intermediate model; final numbers in `ml/results.md`._
+### Model — YOLO11s-OBB, SentinelKilnDB held-out test split (18,492 tiles, 12,819 kilns)
 
-**Model** (YOLO11s-OBB, SentinelKilnDB test split, 18,492 tiles): see [`ml/results.md`](ml/results.md)
-for per-class precision/recall/mAP, the chosen confidence threshold and the non-zigzag vs zigzag
-compliance confusion matrix.
+| Class | Precision | Recall | mAP50 | mAP50-95 |
+|---|---|---|---|---|
+| **all (3 classes)** | 0.773 | 0.764 | **0.800** | 0.524 |
+| CFCBK | 0.875 | 0.681 | 0.782 | 0.531 |
+| FCBK | 0.736 | 0.788 | 0.789 | 0.500 |
+| Zigzag | 0.709 | 0.824 | 0.828 | 0.540 |
 
-**Kasur District run** (Sentinel-2, Feb-Mar 2026, 3,925 km²):
+- **Class-agnostic mAP50 (any kiln): 0.917.** The SentinelKilnDB paper reports 0.875 (RT-DETR), 0.869
+  (TerraMind) and 0.867 (Galileo); evaluation code differs, so treat the comparison as indicative.
+- **Compliance view** (non-zigzag vs zigzag, the regulator's question): 84% type accuracy on detected kilns.
+- **Operating point** conf 0.25: precision 0.794, recall 0.880. Trained 50 epochs on one RTX 3060 (~4 h).
+- Frozen model SHA-256 `f5f038e1…921d4079b`, recorded with every on-chain batch.
+  Full report: [`ml/results.md`](ml/results.md).
+
+| PR curve | Confusion matrix (normalised) | Training curves |
+|---|---|---|
+| ![PR curve](docs/images/model/BoxPR_curve.png) | ![Confusion matrix](docs/images/model/confusion_matrix_normalized.png) | ![Training](docs/images/model/training_curves.png) |
+
+### Kasur District run — Sentinel-2, Feb-Mar 2026, 3,925 km²
 
 | | Count |
 |---|---|
-| Kilns tracked (one on-chain record each) | 1,107 |
-| Non-zigzag (non-compliant design) | 460 |
-| Zigzag | 37 |
-| Possible conversions to zigzag (need field check) | 57 |
-| New since 2023-24 | 420 |
-| Not seen (possibly closed, need field check) | 133 |
-| 2023-24 hand-labelled kilns found again (within 150 m) | 83% of 687 |
+| Kilns detected | 730 (559 FCBK, 169 zigzag, 2 CFCBK) |
+| Kilns tracked — one on-chain record each | 889 |
+| Non-zigzag (non-compliant design) | 387 |
+| Zigzag | 55 |
+| Possible conversions to zigzag (need field check) | 86 |
+| New since 2023-24 | 202 |
+| Not seen — possibly closed (need field check) | 159 |
+| 2023-24 hand-labelled kilns found again (within 150 m) | 80% of 687 |
 
-**Verification:** `verifier/verify.py` passes all 5 steps for every record; changing one field in the
+Committed as **batch #1** on Polygon Amoy
+([transaction](https://amoy.polygonscan.com/tx/0x674ae2767db80dc20391bd4961dae565edcdbdbc8a8f5effc079d0a7d5a39054)),
+Merkle root `0xd1e2a6a2…ddfaeed6f`. `verifier/verify.py` passes all 5 checks; changing one field in the
 manifest fails at step 3 (root mismatch).
 
 ## Verify it yourself
@@ -78,7 +95,8 @@ hashes and the Merkle root and calls `verifyRecord` on the contract directly.
   EPSG:4326 at `scale=10`, i.e. square 0.0000898° pixels (10 m N-S but 8.6 m E-W at Kasur), and each
   128 px tile is min-max stretched per band. Inference uses the same grid and scaling.
 - **Season matters for kiln type.** December smog washes out the reddish brick colour that separates
-  zigzag from FCBK: on December imagery the model found 16 zigzag kilns; on clear Feb-Mar imagery, 124.
+  zigzag from FCBK: with the same intermediate model, December imagery gave 16 zigzag kilns and clear
+  Feb-Mar imagery 124 (169 with the final model).
 - **No floats in hashed data.** Coordinates are micro-degree integers, confidence in basis points, so
   Python, Solidity and the browser hash identical bytes.
 
@@ -92,7 +110,7 @@ verifier/    independent verifier + tamper demo
 schemas/     frozen JSON Schemas for records and manifests
 config/      AOI, run settings, smog-ban windows
 docs/        dashboard (GitHub Pages), security and impact write-ups, images
-tests/       75 pytest tests incl. Python <-> contract parity on a local EVM
+tests/       pytest suite incl. Python <-> contract parity on a local EVM
 fixtures/    fake sample runs for UI development
 ```
 
@@ -113,7 +131,7 @@ python ml/eval.py --weights runs/kiln_s_256/weights/best.pt
 python ml/freeze.py --weights runs/kiln_s_256/weights/best.pt --version v1
 
 # one run (config/run.yaml)
-python pipeline/fetch.py && python pipeline/infer.py --conf <conf> && python pipeline/track.py
+python pipeline/fetch.py && python pipeline/infer.py && python pipeline/track.py
 python pipeline/evidence.py            # add --ipfs with PINATA_JWT in .env
 python pipeline/chain.py deploy        # once; needs RPC_URL + PUBLISHER_PRIVATE_KEY in .env (test wallet)
 python pipeline/chain.py commit

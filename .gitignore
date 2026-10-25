@@ -2,6 +2,9 @@
 /data/
 runs/
 *.pt
+*.mp4
+*.mkv
+*.mov
 .ultralytics/
 .solcx/
 third_party/
@@ -16,6 +19,7 @@ CLAUDE.md
 SETUP_GUIDE.md
 KilnTrace Architecture and Build Guide.pdf
 *Work Split*
+submission/
 notes/
 *.local.md
 

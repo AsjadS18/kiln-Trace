@@ -1,0 +1,22 @@
+{
+  "name": "kiln_v1",
+  "sha256": "f5f038e13ead745321f9a6a43592a1da41efbc8dbbb10c354c72a0c921d4079b",
+  "source": "runs/kiln_s_256/weights/best.pt",
+  "frozen_at": "2026-10-25T16:45:22Z",
+  "imgsz": 256,
+  "conf": 0.25,
+  "conf_rule": "chosen manually: precision/recall trade-off for real imagery (eval suggested 0.1)",
+  "classes": {
+    "0": "CFCBK",
+    "1": "FCBK",
+    "2": "Zigzag"
+  },
+  "test_metrics": {
+    "map50": 0.7999,
+    "map50_95": 0.5236,
+    "class_agnostic_map50": 0.9170714731283166,
+    "precision_at_conf": 0.7945,
+    "recall_at_conf": 0.8799,
+    "type_accuracy_on_detected": 0.8399
+  }
+}

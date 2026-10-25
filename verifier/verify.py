@@ -64,7 +64,15 @@ def main() -> None:
     rpc = args.rpc or os.environ.get("RPC_URL", "https://polygon-amoy.drpc.org")
     gateway = args.gateway or os.environ.get("IPFS_GATEWAY", "https://ipfs.io/ipfs/")
     run_dir = ROOT / "data" / "runs" / args.run
-    chain_info = json.loads((run_dir / "chain.json").read_text(encoding="utf-8"))
+    if (run_dir / "chain.json").exists():
+        chain_info = json.loads((run_dir / "chain.json").read_text(encoding="utf-8"))
+    else:   # fresh clone: use the files published for the dashboard (docs/data)
+        pub = json.loads((ROOT / "docs" / "data" / "run.json").read_text(encoding="utf-8"))
+        if pub["runId"] != args.run or not pub.get("chain"):
+            raise SystemExit(f"no local data for {args.run} and docs/data holds {pub['runId']}")
+        chain_info = pub["chain"]
+        run_dir = ROOT / "docs" / "data"
+        rpc = args.rpc or pub.get("rpc") or rpc
     abi = json.loads((ROOT / "contracts" / "abi" / "KilnTraceRegistry.json").read_text(encoding="utf-8"))["abi"]
 
     print(f"KilnTrace verifier - run {args.run}, contract {chain_info['contract']}, batch {chain_info['batchId']}\n")

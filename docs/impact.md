@@ -10,12 +10,13 @@ derive transparently; headline numbers we cannot defend are left out.
 
 | Output | How it is measured | Value |
 |---|---|---|
-| Kilns located from free imagery | Detections in the district from Sentinel-2 (Feb-Mar 2026) | see `ml/results.md` / dashboard |
-| Known kilns re-found | Share of 2023-24 hand-labelled kilns with a detection within 150 m | ~83% (draft model) |
-| Non-zigzag kilns flagged for inspection | Detections classified FCBK/CFCBK | see dashboard header |
-| Possible conversions to zigzag | Baseline non-zigzag kiln now classified zigzag | candidates, need field check |
-| Possibly closed kilns | Baseline kiln not detected on a cloud-free mosaic | candidates, need field check |
-| Tamper-evident records | Records whose hash is anchored on-chain | 100% of records in the batch |
+| Kilns located from free imagery | Detections in the district from Sentinel-2 (Feb-Mar 2026) | 730 |
+| Known kilns re-found | Share of 2023-24 hand-labelled kilns with a detection within 150 m | 80% of 687 |
+| Non-zigzag kilns flagged for inspection | Tracked kilns in state NON_ZIGZAG | 387 |
+| Possible conversions to zigzag | Baseline non-zigzag kiln now classified zigzag | 86 candidates, need field check |
+| Possibly closed kilns | Baseline kiln not detected on a cloud-free mosaic | 159 candidates, need field check |
+| Tamper-evident records | Records whose hash is anchored on-chain (batch #1) | 889 of 889 (100%) |
+| Model precision for flagged kilns | Test split, conf 0.25, class-agnostic | 0.794 (recall 0.880) |
 
 District-wide coverage costs nothing per run in imagery (Sentinel-2 is free) and minutes of GPU time.
 
